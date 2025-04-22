@@ -13,10 +13,10 @@ import ru.minusd.security.domain.dto.SignInRequest;
 import ru.minusd.security.domain.dto.SignUpRequest;
 import ru.minusd.security.service.AuthenticationService;
 
+@Tag(name = "Auth", description = "The Auth API")
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
-@Tag(name = "Аутентификация")
 public class AuthController {
     private final AuthenticationService authenticationService;
 

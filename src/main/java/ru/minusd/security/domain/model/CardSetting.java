@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Builder
@@ -32,7 +31,6 @@ public class CardSetting implements Serializable {
                 '}';
     }
 
-
     public String getNumber() {
         return number;
     }
@@ -40,7 +38,4 @@ public class CardSetting implements Serializable {
     public void setNumber(String number) {
         this.number = number;
     }
-
-
-
 }

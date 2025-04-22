@@ -1,4 +1,4 @@
-package ru.minusd.security.controller;
+package ru.minusd.security.validation;
 
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;

@@ -22,13 +22,10 @@ public class Card implements Serializable {
     @Id
     @NotBlank
     @Column(name = "number")
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
-//    @SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", allocationSize = 1)
     private String number;
     @Column(name = "owner", unique = false, nullable = true)
     private String owner;
     @Column(name = "balance", unique = false, nullable = true)
-//    @Min(10)
     private String balance;
     @Column(name = "validityPeriod", unique = false, nullable = true)
     private String validityPeriod;
@@ -50,10 +47,6 @@ public class Card implements Serializable {
                 ", transactionHistory='" + transactionHistory + '\'' +
                 '}';
     }
-
-//    public Card(long incrementAndGet, String format) {
-//        System.out.println("Hello");
-//    }
 
     public String getNumber() {
         return number;

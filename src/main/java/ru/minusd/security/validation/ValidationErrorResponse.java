@@ -1,4 +1,4 @@
-package ru.minusd.security.controller;
+package ru.minusd.security.validation;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

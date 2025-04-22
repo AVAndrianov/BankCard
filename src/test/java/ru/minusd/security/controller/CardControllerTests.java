@@ -31,20 +31,5 @@ public class CardControllerTests {
         assertThat(controller).isNotNull();
         authController.signUp(new SignUpRequest("qwe","qwe@qwe.ru","qwerty"));
         controller.card2("123","1000","qwe");
-//        Mockito.when(this.controller.card2("123","1000","qwe"));
-//                .thenReturn(new Card("123","1000","qwe","null", Status.ACTIVE, new HashMap<>()));
-
     }
-//    @Autowired
-//    MockMvc mvc;
-
-
-//    @Test
-//    void findAllShouldReturnAllBooks() throws Exception {
-//        Mockito.when(this.controller.card2("123","1000","qwe")).thenReturn(new Card("123","1000","qwe","null", Status.ACTIVE, new HashMap<>()));
-////
-////        mvc.perform(get("/books"))
-////                .andExpect(status().isOk())
-////                .andExpect(jsonPath("$.length()").value(2));
-//    }
 }

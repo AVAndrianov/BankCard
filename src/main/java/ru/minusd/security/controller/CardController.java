@@ -29,7 +29,7 @@ import java.util.Map;
 @Validated
 @RestController
 @RequiredArgsConstructor
-public class CardController{
+public class CardController {
     private final CardService cardService;
 
     @Validated
@@ -45,12 +45,11 @@ public class CardController{
         return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(new ErrorMessage(exception.getMessage()));
     }
 
-    @ExceptionHandler(Exception.class)
     @RequestMapping(value = "/getCard", method = RequestMethod.GET)
     @GetMapping
     @Operation(summary = "Доступен только авторизованным пользователям")
-    public ResponseEntity<Card> getCard(String number) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
-        return ResponseEntity.ok(cardService.getByNumber(number));
+    public Card getCard(String number) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
+        return cardService.getByNumber(number);
     }
 
     @RequestMapping(value = "/deleteCard", method = RequestMethod.GET)

@@ -18,18 +18,28 @@ public class Crypto {
         keyGenerator.init(128);
     }
 
-    public String crypted(String value) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+    /**
+     * Зашифровка данныех
+     *
+     * @param value данные для шифрования
+     * @return зашифрованные данные
+     */
+    public String encrypt(String value) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         cipher.init(Cipher.ENCRYPT_MODE, priKey);
         byte[] bytes = cipher.doFinal(value.getBytes(StandardCharsets.UTF_8));
-        String encrypted = DatatypeConverter.printHexBinary(bytes);
-        return encrypted;
+        return DatatypeConverter.printHexBinary(bytes);
     }
 
-    public String uncrypted(String value) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
+    /**
+     * Расшифровка данныех
+     *
+     * @param value данные ранее зашифрованные методом
+     * @return расшифрованные данные
+     * @see #encrypt(String)
+     */
+    public String decrypt(String value) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
         cipher.init(Cipher.DECRYPT_MODE, priKey);
         byte[] bytes1 = cipher.doFinal(DatatypeConverter.parseHexBinary(value));
         return new String(bytes1);
     }
-
-
 }

@@ -2,22 +2,45 @@ spring:
   application:
     name: security-security
   datasource:
-    url: jdbc:h2:mem:security-security
+    #    url: jdbc:h2:mem:security-security
+    url: jdbc:h2:file:./db
+#    INIT: CREATE SCHEMA IF NOT EXISTS corp
     driverClassName: org.h2.Driver
-    username: root
-    password: root
-#    url: jdbc:postgresql://localhost:5432/liquibase_example
-#    username: postgres
-#    driver-class-name: org.postgresql.Driver
-#    password: pass
+    username: sa
+    password:
+  #    replace: none
+  #    url: jdbc:postgresql://localhost:5432/liquibase_example
+  #    username: postgres
+  #    driver-class-name: org.postgresql.Driver
+  #    password: pass
+
+    #  spring.liquibase.change-log=classpath:db/changelog/db.db.changelog-master.xml
+#  logging.level.liquibase = INFO
+#
+#  spring.datasource.url=jdbc:h2:mem:liquibaseDB
+#  spring.datasource.username=sa
+#  spring.datasource.password=
+
   liquibase:
-    change-log: classpath:db/changelog/db.changelog.xml
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    #    spring.liquibase.change-log=classpath:db.db.changelog-master.xml
+    url: jdbc:h2:file:./db
+    user: sa
+    password:
+#    default-schema: CORP
+    drop-first: false
+#    hub:
+#      mode: off
   jpa:
     hibernate:
       naming:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
-      ddl-auto: create-drop
-#      ddl-auto: none
+#      database-platform: org.hibernate.dialect.H2Dialect
+#      ddl-auto: validate
+#      ddl-auto: create
+#      ddl-auto: create-drop
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:
@@ -25,3 +48,11 @@ spring:
 token:
   signing:
     key: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
+  test:
+    database:
+      replace: none
+  flowable:
+    databaseSchemaUpdate: none
+  h2:
+    console:
+      enabled: true

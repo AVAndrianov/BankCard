@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="4" author="me4">
+        <sql endDelimiter=";">
+            insert into card (balance, owner, status, validity_period, number) values ('1000000000', 'AVAndrianov', 'ACTIVE', null, '123456');
+<!--            insert into users (email, password, role, username, id) values ('AVAndrianov@example.com', '$2a$10$/qYsrDQ53mUcn7brgyEOCuDmPc3qcNf0p91f/t7e23xPsXWvYI1Ke', 'ROLE_USER', 'AVAndrianov', NEXT VALUE FOR user_id_seq);-->
+        </sql>
+    </changeSet>
+</databaseChangeLog>

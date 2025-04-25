@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!-- Добавим 4 новых жанра -->
+
+    <!--            <changeSet id="insert-into-genre" author="mediaSoft">-->
+    <!--                <insert tableName="users">-->
+    <!--                    <column name="id" value="5"/>-->
+    <!--                    <column name="username" value="AVAndrianov"/>-->
+    <!--                    <column name="email" value="AVAndrianov@example.com"/>-->
+    <!--                    <column name="password" value="useruser"/>-->
+    <!--                    <column name="role" value="ROLE_USER"/>-->
+    <!--                </insert>-->
+    <!--            </changeSet>-->
+
+<!--    <changeSet author="author.name" id="insert-into-genre">-->
+<!--        &lt;!&ndash;        <validCheckSum>9:c9174c90efdf87b8bdd8a6e13f262cbc</validCheckSum>&ndash;&gt;-->
+
+<!--        &lt;!&ndash; Validations &ndash;&gt;-->
+<!--        <preConditions>-->
+<!--            <tableExists tableName="users"/>-->
+<!--        </preConditions>-->
+<!--        &lt;!&ndash; Create Table &ndash;&gt;-->
+<!--        <sql>-->
+<!--            insert into users (email, password, role, username, id) values ('AVAndrianov@example.com', 'useruser', 'ROLE_USER', 'AVAndrianov', '2')-->
+<!--            &lt;!&ndash;            INSERT INTO USERS (Id, Username, Password, Email, Role) VALUES ('1', 'AVAndrianov', 'useruser', 'AVAndrianov@example.com', 'ROLE_USER')&ndash;&gt;-->
+<!--        </sql>-->
+<!--        <comment>Inserted new record in table 'Users'</comment>-->
+<!--    </changeSet>-->
+
+
+<!--    <changeSet id="2" author="me">-->
+<!--        <sql endDelimiter=";">-->
+<!--            insert into users (email, password, role, username, id) values ('AVAndrianov@example.com', 'useruser', 'ROLE_USER', 'AVAndrianov', '2');-->
+<!--&lt;!&ndash;            insert into test1 (id, name) values (1, 'name 1');&ndash;&gt;-->
+<!--&lt;!&ndash;            insert into test1 (id, name) values (3, '${val1}');&ndash;&gt;-->
+<!--        </sql>-->
+<!--    </changeSet>-->
+
+    <changeSet id="4" author="me4">
+        <sql endDelimiter=";">
+            insert into users (email, password, role, username, id) values ('AVAndrianov@example.com', '$2a$10$/qYsrDQ53mUcn7brgyEOCuDmPc3qcNf0p91f/t7e23xPsXWvYI1Ke', 'ROLE_USER', 'AVAndrianov', NEXT VALUE FOR user_id_seq);
+<!--            insert into test1 (id, name) values (1, 'name 1');-->
+<!--            insert into test1 (id, name) values (3, '${val1}');-->
+        </sql>
+    </changeSet>
+</databaseChangeLog>

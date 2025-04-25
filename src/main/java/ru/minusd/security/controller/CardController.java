@@ -36,8 +36,8 @@ public class CardController {
     @RequestMapping(value = "/addCard", method = RequestMethod.GET)
     @GetMapping
     @Operation(summary = "Доступен только Администратору")
-    @PreAuthorize("hasRole('ADMIN')")
-    public Card card2(@NotBlank String number, @Min(10) String balance, @Size(max = 10) String owner) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
+//    @PreAuthorize("hasRole('ADMIN')")
+    public Card card2(@NotBlank String number, @Min(10) String balance, @Size(max = 15) String owner) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
         return cardService.addCard(number, balance, owner);
     }
 

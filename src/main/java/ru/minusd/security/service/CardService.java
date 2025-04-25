@@ -13,7 +13,6 @@ import ru.minusd.security.repository.CardRepository;
 import javax.crypto.*;
 import java.math.BigDecimal;
 import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -29,13 +28,13 @@ public class CardService {
     }
 
     public Card addCard(String number, String balance, String owner) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
-        return save(new Card(crypto.crypted(number), crypto.crypted(owner), crypto.crypted(balance), "null", Status.ACTIVE, new HashMap<>()));
+        return save(new Card(crypto.encrypt(number), crypto.encrypt(owner), crypto.encrypt(balance), "null", Status.ACTIVE, new HashMap<>()));
     }
 
     public Card getByNumber(String number) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
-        Card card = repository.findByNumber(crypto.crypted(number)).get();
-        card.setOwner(crypto.uncrypted(card.getOwner()));
-        card.setNumber(crypto.uncrypted(card.getNumber()));
+        Card card = repository.findByNumber(crypto.encrypt(number)).get();
+        card.setOwner(crypto.decrypt(card.getOwner()));
+        card.setNumber(crypto.decrypt(card.getNumber()));
         return card;
     }
 

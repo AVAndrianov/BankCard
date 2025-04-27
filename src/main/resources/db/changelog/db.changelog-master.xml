@@ -10,6 +10,6 @@
     <include file="create-changeset-card_setting.xml" relativeToChangelogFile="true"/>
     <!--    <include file="create-table-users.yaml" relativeToChangelogFile="true"/>-->
     <include file="insert-changest-user.xml" relativeToChangelogFile="true"/>
-<!--    <include file="insert-changest-card.xml" relativeToChangelogFile="true"/>-->
+    <include file="insert-changest-card.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

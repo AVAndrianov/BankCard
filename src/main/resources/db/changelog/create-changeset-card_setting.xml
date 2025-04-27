@@ -4,19 +4,19 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="create_table_card_setting" author="author.name4">
+    <changeSet id="card_setting" author="author.name4">
         <createTable tableName="card_setting">
             <column name="block_request" type="boolean">
                 <constraints nullable="true" unique="false"/>
             </column>
-            <column name="day_limit" type="varchar(64)">
+            <column name="day_limit" type="integer">
                 <constraints nullable="true" unique="false"/>
             </column>
-            <column name="month_limit" type="varchar(64)">
+            <column name="month_limit" type="integer">
                 <constraints nullable="true" unique="false"/>
             </column>
             <column name="number" type="varchar(255)">
-                <constraints primaryKey="true" nullable="false" unique="true"/>
+                <constraints primaryKey="true" nullable="false"/>
             </column>
         </createTable>
     </changeSet>

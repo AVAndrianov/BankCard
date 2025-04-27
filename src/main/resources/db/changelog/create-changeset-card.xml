@@ -4,21 +4,21 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="create_table_card" author="author.name4">
+    <changeSet id="card" author="author.name4">
         <createTable tableName="card">
-            <column name="balance" type="varchar(64)">
+            <column name="balance" type="varchar(255)">
                 <constraints nullable="true" unique="false"/>
             </column>
-            <column name="number" type="varchar(64)">
+            <column name="number" type="varchar(255)">
                 <constraints primaryKey="true" unique="true"/>
             </column>
-            <column name="owner" type="varchar(64)">
+            <column name="owner" type="varchar(255)">
                 <constraints nullable="true" unique="false"/>
             </column>
-            <column name="status" type="varchar(64)">
+            <column name="status" type="varchar(255)">
                 <constraints nullable="true" unique="false"/>
             </column>
-            <column name="validity_period" type="varchar(64)">
+            <column name="validity_period" type="varchar(255)">
                 <constraints nullable="true" unique="false"/>
             </column>
         </createTable>

@@ -4,22 +4,16 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="create_table_card" author="author.name4">
+    <changeSet id="card_transaction_history" author="author.name4">
         <createTable tableName="card_transaction_history">
             <column name="transaction_history_key" type="timestamp(6)">
-                <constraints primaryKey="true" nullable="false" unique="false"/>
+                <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="card_number" type="varchar(64)">
-                <constraints primaryKey="true" nullable="true" unique="false"/>
+            <column name="card_number" type="varchar(255)">
+                <constraints primaryKey="true" nullable="true"/>
             </column>
-            <column name="transaction_history" type="varchar(64)">
-                <constraints nullable="true" unique="false"/>
-            </column>
-            <column name="status" type="varchar(64)">
-                <constraints nullable="true" unique="false"/>
-            </column>
-            <column name="validity_period" type="varchar(64)">
-                <constraints nullable="true" unique="false"/>
+            <column name="transaction_history" type="varchar(255)">
+                <constraints nullable="true"/>
             </column>
         </createTable>
     </changeSet>

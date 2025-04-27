@@ -26,18 +26,25 @@
     cd BankCard
     ```
    
-2. Обновление переменной среды чтобы она указывала на Java 17:
+2. Перейдите в ветку мастер:
+
+   ```bash
+   git checkout master
+   ``` 
+
+3. Обновление переменной среды чтобы она указывала на Java 17:
   
    ```bash
    export JAVA_HOME=$(/usr/libexec/java_home)
    ```  
-3. Запустите контейнеры:
+   
+4. Запустите контейнеры:
 
     ```bash
-    docker compose up --build
+    docker compose up
     ```
 
-4. Откройте браузер и перейдите по адресу:
+5. Откройте браузер и перейдите по адресу:
 
     - Backend: `http://localhost:8080`
     - Swagger: `http://localhost:8080/swagger-ui/index.html`

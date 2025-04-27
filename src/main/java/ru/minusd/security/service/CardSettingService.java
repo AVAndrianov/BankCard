@@ -56,7 +56,7 @@ public class CardSettingService {
             CardSetting cardSetting = getByNumber(number);
             return cardSetting.getMonthLimit();
         } else {
-            return null;
+            return Integer.MAX_VALUE;
         }
     }
 
@@ -65,7 +65,7 @@ public class CardSettingService {
             CardSetting cardSetting = getByNumber(number);
             return cardSetting.getDayLimit();
         } else {
-            return null;
+            return Integer.MAX_VALUE;
         }
     }
 }

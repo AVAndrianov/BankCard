@@ -1,0 +1,14 @@
+version: '3'
+services:
+  client-backend:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    image: client:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_PORT= 8080
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:./db

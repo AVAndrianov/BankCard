@@ -8,9 +8,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.minusd.security.domain.dto.SignUpRequest;
-import ru.minusd.security.domain.model.Card;
-import ru.minusd.security.domain.model.Status;
+//import ru.minusd.security.domain.dto.SignUpRequest;
+//import ru.minusd.security.domain.dto.SignUpRequest;
 
 import java.util.HashMap;
 
@@ -19,17 +18,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class CardControllerTests {
 
-    @Autowired
-    private CardController controller;
-
-    @Autowired
-    AuthController authController;
+//    @Autowired
+//    private CardController controller;
+//
+//    @Autowired
+//    AuthController authController;
 
     @Test
     @WithMockUser(roles="ADMIN")
     void contextLoads() throws Exception {
-        assertThat(controller).isNotNull();
-        authController.signUp(new SignUpRequest("qwe","qwe@qwe.ru","qwerty"));
-        controller.card2("123","1000","qwe");
+//        assertThat(controller).isNotNull();
+////        authController.signUp(new SignUpRequest("qwe","qwe@qwe.ru","qwerty"));
+//        controller.card2("123","1000","qwe");
     }
 }

@@ -28,13 +28,16 @@ public class CardService {
     }
 
     public Card addCard(String number, String balance, String owner) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
-        return save(new Card(crypto.encrypt(number), crypto.encrypt(owner), crypto.encrypt(balance), "null", Status.ACTIVE, new HashMap<>()));
+        return save(new Card(crypto.encrypt(number), owner, balance, "null", Status.ACTIVE, new HashMap<>()));
     }
 
     public Card getByNumber(String number) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
         Card card = repository.findByNumber(crypto.encrypt(number)).get();
-        card.setOwner(crypto.decrypt(card.getOwner()));
-        card.setNumber(crypto.decrypt(card.getNumber()));
+//        card.setOwner(crypto.decrypt(card.getOwner()));
+        card.setOwner(card.getOwner());
+//        System.out.println("1111121312312312312312 "+ card.getNumber());
+//        card.setNumber(crypto.decrypt(card.getNumber()));
+        card.setNumber(card.getNumber());
         return card;
     }
 

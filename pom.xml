@@ -100,14 +100,14 @@
             <version>1.5.2</version>
         </dependency>
         <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-codegen-maven-plugin</artifactId>
-            <version>2.4.18</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.maven.wagon</groupId>
             <artifactId>wagon-provider-api</artifactId>
             <version>2.8</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -134,16 +134,16 @@
                 <artifactId>classgraph</artifactId>
                 <version>4.8.165</version>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>io.swagger</groupId>-->
-<!--                <artifactId>swagger-codegen-maven-plugin</artifactId>-->
-<!--                <version>2.4.18</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>io.swagger.codegen.v3</groupId>-->
-<!--                <artifactId>swagger-codegen-maven-plugin</artifactId>-->
-<!--                <version>3.0.24</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>2.4.18</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.codegen.v3</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>3.0.24</version>
+            </dependency>
             <dependency>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-core</artifactId>
@@ -176,15 +176,6 @@
                     </excludes>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                <version>3.11.0</version>-->
-<!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <source>17</source>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <target>17</target>&ndash;&gt;-->
-<!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-maven-plugin</artifactId>
@@ -203,43 +194,7 @@
                     <outputDir>${project.build.directory}</outputDir>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.openapitools</groupId>-->
-<!--                <artifactId>openapi-generator-maven-plugin</artifactId>-->
-<!--                <version>3.3.4</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>compile</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>generate</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <generatorName>spring</generatorName>-->
-<!--&lt;!&ndash;                            <inputSpec></inputSpec>&ndash;&gt;-->
-<!--                            <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>-->
-<!--                            <output>${project.build.directory}/generated-sources</output>-->
-<!--                            <apiPackage>com.api</apiPackage>-->
-<!--                            <modelPackage>com.model</modelPackage>-->
-<!--                            <supportingFilesToGenerate>-->
-<!--                                ApiUtil.java-->
-<!--                            </supportingFilesToGenerate>-->
-<!--                            <configOptions>-->
-<!--                                <groupId>${project.groupId}</groupId>-->
-<!--                                <artifactId>${project.artifactId}</artifactId>-->
-<!--                                <artifactVersion>${project.version}</artifactVersion>-->
-<!--                                <delegatePattern>true</delegatePattern>-->
-<!--                                <sourceFolder>swagger</sourceFolder>-->
-<!--                                <library>spring-mvc</library>-->
-<!--                                <interfaceOnly>true</interfaceOnly>-->
-<!--                                <useBeanValidation>true</useBeanValidation>-->
-<!--                                <dateLibrary>java8</dateLibrary>-->
-<!--                                <java8>true</java8>-->
-<!--                            </configOptions>-->
-<!--                            <ignoreFileOverride>${project.basedir}/.openapi-generator-ignore</ignoreFileOverride>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+
         </plugins>
     </build>
 

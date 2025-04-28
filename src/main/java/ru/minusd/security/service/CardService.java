@@ -33,10 +33,7 @@ public class CardService {
 
     public Card getByNumber(String number) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
         Card card = repository.findByNumber(crypto.encrypt(number)).get();
-//        card.setOwner(crypto.decrypt(card.getOwner()));
         card.setOwner(card.getOwner());
-//        System.out.println("1111121312312312312312 "+ card.getNumber());
-//        card.setNumber(crypto.decrypt(card.getNumber()));
         card.setNumber(card.getNumber());
         return card;
     }

@@ -53,6 +53,13 @@ public class User implements UserDetails {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
+    public User(String username, String password, String email, Role role) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;

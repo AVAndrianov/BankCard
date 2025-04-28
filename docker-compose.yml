@@ -3,7 +3,7 @@ services:
   client-backend:
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    image: client:0.0.1
+    image: client:0.0.7
     build:
       context: .
       dockerfile: Dockerfile
